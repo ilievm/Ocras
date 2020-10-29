@@ -1,0 +1,30 @@
+<div class="d-menu-container">
+
+  <h2>Welcome to {{name}}</h2>
+  <h4>{{address}}</h4>
+
+  <h6>Food Menu</h6>
+  <div class="d-menu-item" *ngFor="let item of foodItems" (click)="handleClick($event)">
+    <div class="d-food">{{item.item}}</div>
+    <div class="d-dollars">${{item.price}}</div>
+    <div class="d-description">{{item.description}}</div>
+  </div>
+
+  <h6>Drink Menu</h6>
+  <div class="d-menu-item" *ngFor="let item of drinkItems" (click)="handleClick($event)">
+    <div class="d-food">{{item.item}}</div>
+    <div class="d-dollars">${{item.price}}</div>
+    <div class="d-description">{{item.description}}</div>
+  </div>
+
+  <h3>Your order:</h3>
+  <div class="order">
+    <span class="d-ordered-item" *ngFor="let item of selectedItems">
+      <p>{{item}}</p>
+    </span>
+    <div class="total">Your total is: ${{total}}</div>
+    <button (click)="submitButtonAction()" [disabled]="disableButton "class="submit">SUBMIT</button>
+
+  </div>
+</div>
+

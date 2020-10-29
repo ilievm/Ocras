@@ -1,0 +1,30 @@
+
+<!-- <ion-item *ngFor="let order of orders" >
+  
+  <ion-label> Table: {{ order.tableNum }} </ion-label> 
+  <ion-label>  Food: {{ order.foodOrder }} </ion-label>
+  <ion-label> Drinks: {{ order.drinkOrder }} </ion-label>
+  <ion-label> isServed?: {{ order.isServed }} </ion-label>
+  <ion-button (click)="toggleServed(order)"> Served! </ion-button>
+ 
+</ion-item> -->
+
+<ion-card *ngFor="let order of orders">
+  <ion-card-header>
+    <ion-card-subtitle>Ordered at {{ order.timeOfOrder }} </ion-card-subtitle>
+    <ion-card-title>Table: {{ order.tableNum }} </ion-card-title>
+  </ion-card-header>
+
+  <ion-item>
+    <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-label></ion-label>
+    <ion-button (click)="toggleServed(order)" fill="outline" slot="end">SERVE!</ion-button>
+  </ion-item>
+
+  <ion-card-subtitle>Order:</ion-card-subtitle>
+  <ion-card-content>
+    {{ order.foodOrder }}
+  </ion-card-content>
+  
+</ion-card>
+
